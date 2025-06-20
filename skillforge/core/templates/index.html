@@ -1,0 +1,150 @@
+
+{% extends "base.html" %}
+{% block title %}Home | Skill Forge{% endblock %}
+{% block content %}{% load static %}
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content col-md-6">
+        <h1 class="display-4">Learn From the Best</h1>
+        <p class="lead">Upgrade your skills with top-notch courses designed by experts.</p>
+        <a href="#" class="btn btn-primary btn-lg mt-3">Explore Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="container">
+    <h2 class="text-center section-heading">Featured Courses</h2>
+    <p class="text-center mb-4">Discover your perfect program in our courses.</p>
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card course-card">
+          <img src="{% static 'images/web_dev.jpg' %}" class="card-img-top" alt="Course 1">
+          <div class="card-body">
+            <h5 class="card-title">Web Development</h5>
+            <p class="card-text">HTML, CSS, JavaScript and more to build modern websites.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card course-card">
+          <img src="{% static 'images/data_ana.jpg' %}" class="card-img-top" alt="Course 2">
+          <div class="card-body">
+            <h5 class="card-title">Data Science</h5>
+            <p class="card-text">Master data analysis, Python, and machine learning.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card course-card">
+          <img src="{% static 'images/Speaker.jpg' %}" class="card-img-top" alt="Course 3">
+          <div class="card-body">
+            <h5 class="card-title">How to be a Speaker</h5>
+            <p class="card-text">Build powerful mobile apps using Flutter or React Native.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card course-card">
+          <img src="{% static 'images/ml.jpg' %}" class="card-img-top" alt="Course 4">
+          <div class="card-body">
+            <h5 class="card-title">Artificial Intelligence</h5>
+            <p class="card-text">Explore the world of AI and build smart systems.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <!-- card-5 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card course-card">
+          <img src="{% static 'images/dig_mark.jpg' %}" class="card-img-top" alt="Course 5">
+          <div class="card-body">
+            <h5 class="card-title">Digital Marketing</h5>
+            <p class="card-text">Learning Today, Leading Tomorrow in Digital Marketing..</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <!-- card-6 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card course-card">
+          <img src="{% static 'images/trading.jpg' %}" class="card-img-top" alt="Course 6">
+          <div class="card-body">
+            <h5 class="card-title">Trading</h5>
+            <p class="card-text">Learn the Charts, Master the Markets.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professors Section -->
+<section class="container">
+  <h2 class="text-center section-heading">Meet Our Professors</h2>
+  <div class="row">
+    <!-- Professor 1 -->
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card course-card">
+        <img src="{% static 'images/prof_1.jpg' %}" class="card-img-top" alt="Professor 1">
+        <div class="card-body text-center">
+          <h5 class="card-title">Prof. Ajay Shah</h5>
+          <p class="card-text">Expert in Web Development and UX Design.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professor 2 -->
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card course-card">
+        <img src="{% static 'images/Prof_2.jpg' %}" class="card-img-top" alt="Professor 2">
+        <div class="card-body text-center">
+          <h5 class="card-title">Prof. Arjun Patel</h5>
+          <p class="card-text">Data Science wizard with 10+ years experience.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professor 3 -->
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card course-card">
+        <img src="{% static 'images/prf_3.jpg' %}" class="card-img-top" alt="Professor 3">
+        <div class="card-body text-center">
+          <h5 class="card-title">Prof. Raghav Iyer</h5>
+          <p class="card-text">App development & UI innovation specialist.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professor 4 -->
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card course-card">
+        <img src="{% static 'images/prof_4.jpg' %}" class="card-img-top" alt="Professor 4">
+        <div class="card-body text-center">
+          <h5 class="card-title">Prof. Neha Sharma</h5>
+          <p class="card-text">AI researcher focused on human-AI collaboration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+ 
+
+{% endblock %}

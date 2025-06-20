@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Access Denied{% endblock %}
+
+{% block content %}
+<div class="alert alert-warning mt-4" role="alert">
+  You are not enrolled in the course <strong>{{ course.title }}</strong>.
+  <a href="{% url 'enroll_course' course.id %}" class="btn btn-primary ms-3">Enroll Now</a>
+</div>
+{% endblock %}

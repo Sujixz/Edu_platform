@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ course.title }} - SkillForge{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <!-- Course info -->
+    <div class="col-md-8">
+      <h2>{{ course.title }}</h2>
+      <p class="text-muted">By {{ course.instructor.username }}</p>
+      <img src="{{ course.thumbnail.url }}" alt="{{ course.title }}" class="img-fluid rounded mb-3">
+      <p>{{ course.description }}</p>
+      <p><strong>Category:</strong> {{ course.category.name }}</p>
+      <p><strong>Price:</strong> ₹{{ course.price }}</p>
+      {% if course.is_published %}
+        <span class="badge bg-success">Published</span>
+      {% else %}
+        <span class="badge bg-warning text-dark">Not Published</span>
+      {% endif %}
+
+      <!-- Lessons list -->
+      <h4 class="mt-4">Lessons</h4>
+      <ul class="list-group">
+        {% for lesson in course.lessons.all|dictsort:"order" %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ lesson.order }}. {{ lesson.title }}
+            <a href="{{ lesson.video_url }}" target="_blank" class="btn btn-sm btn-outline-primary">Watch</a>
+          </li>
+        {% empty %}
+          <li class="list-group-item">No lessons added yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-3">
+        <div class="card-body text-center">
+          <h5>Course Access</h5>
+
+          {% if user.is_authenticated %}
+            {% if is_enrolled %}
+              <p class="text-success fw-semibold">You are already enrolled.</p>
+              <a href="{% url 'lesson_detail' course.lessons.first.id %}" class="btn btn-outline-success w-100">Go to Lessons</a>
+            {% else %}
+              <a href="{% url 'enroll_course' course.id %}" class="btn btn-primary w-100">Enroll Now</a>
+            {% endif %}
+          {% else %}
+            <a href="{% url 'login' %}?next={{ request.path }}" class="btn btn-warning w-100">Login to Enroll</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
